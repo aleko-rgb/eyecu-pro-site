@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eye-c-u.eu/sitemap.xml
