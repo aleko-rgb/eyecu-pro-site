@@ -406,4 +406,41 @@
   </span>
 </div>
 
+<script>
+  // sticky nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  function closeMenu(){ navLinks.classList.remove('open'); }
+
+  // cookie notice
+  function getCookie(name){
+    return document.cookie.split('; ').find(row => row.startsWith(name+'='));
+  }
+  const cookieBar = document.getElementById('cookieBar');
+  if(getCookie('eyecu_cookie_ack')){
+    cookieBar.style.display = 'none';
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    const d = new Date(); d.setFullYear(d.getFullYear()+1);
+    document.cookie = 'eyecu_cookie_ack=1; expires=' + d.toUTCString() + '; path=/';
+    cookieBar.style.display = 'none';
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
 </html>
