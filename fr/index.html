@@ -87,7 +87,7 @@
     border:1px solid transparent;transition:opacity .25s ease, background .25s ease;
   }
   .btn:hover{opacity:0.85;}
-  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);background:var(--paper);}
   .btn-solid{background:var(--bordeaux);color:#fff;}
 
   .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink);}
@@ -106,7 +106,6 @@
       transition:opacity 0.4s ease;
     }
     .nav-links.open{opacity:1;pointer-events:all;}
-    .nav-links .btn-ghost{border-color:rgba(255,255,255,0.5);color:#fff;}
     .nav-toggle{display:block;z-index:110;}
     #langSwitchMobile{position:fixed;bottom:2.4rem;left:0;right:0;justify-content:center;z-index:110;opacity:0;pointer-events:none;transition:opacity .4s ease;display:flex;}
     #langSwitchDesktop{display:none;}
@@ -138,7 +137,6 @@
     opacity:0;animation:riseIn 1s ease 0.85s forwards;
   }
   .hero-ctas{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:riseIn 1s ease 1s forwards;}
-  .hero-ctas .btn-ghost{border-color:rgba(255,255,255,0.6);color:#fff;}
   .hero-ctas .btn-solid{background:var(--bordeaux);color:#fff;}
   @keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
@@ -301,7 +299,7 @@
     <div class="craft-item">
       <div class="num">01</div>
       <h3 data-i18n="craft_f1_title">Tout sujet</h3>
-      <p data-i18n="craft_f1_body">Portraits, animaux, paysages, échographies, mariages — toute photo peut être sertie.</p>
+      <p data-i18n="craft_f1_body">Portraits, animaux, paysages, mariages — toute photo peut être sertie.</p>
     </div>
     <div class="craft-item">
       <div class="num">02</div>
@@ -381,8 +379,8 @@
         <p data-i18n="why_c3_body">Chaque pièce est fabriquée sur mesure à partir de l'image du client — rien de générique.</p>
       </div>
       <div class="why-card">
-        <h3 data-i18n="why_c4_title">Option marque blanche</h3>
-        <p data-i18n="why_c4_body">Présentez la pièce sous le nom de votre studio, EYE C U travaille en coulisses.</p>
+        <h3 data-i18n="why_c4_title">Une expérience éprouvée</h3>
+        <p data-i18n="why_c4_body">Nous travaillons depuis des années avec des clients dans toute l'Union européenne, avec une qualité constante et un service professionnel.</p>
       </div>
     </div>
   </div>
