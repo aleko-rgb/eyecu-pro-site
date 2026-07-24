@@ -87,7 +87,7 @@
     border:1px solid transparent;transition:opacity .25s ease, background .25s ease;
   }
   .btn:hover{opacity:0.85;}
-  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);background:var(--paper);}
   .btn-solid{background:var(--bordeaux);color:#fff;}
 
   .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink);}
@@ -106,7 +106,6 @@
       transition:opacity 0.4s ease;
     }
     .nav-links.open{opacity:1;pointer-events:all;}
-    .nav-links .btn-ghost{border-color:rgba(255,255,255,0.5);color:#fff;}
     .nav-toggle{display:block;z-index:110;}
     #langSwitchMobile{position:fixed;bottom:2.4rem;left:0;right:0;justify-content:center;z-index:110;opacity:0;pointer-events:none;transition:opacity .4s ease;display:flex;}
     #langSwitchDesktop{display:none;}
@@ -138,7 +137,6 @@
     opacity:0;animation:riseIn 1s ease 0.85s forwards;
   }
   .hero-ctas{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:riseIn 1s ease 1s forwards;}
-  .hero-ctas .btn-ghost{border-color:rgba(255,255,255,0.6);color:#fff;}
   .hero-ctas .btn-solid{background:var(--bordeaux);color:#fff;}
   @keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
@@ -280,9 +278,9 @@
 
 <header class="hero" id="top" style="background-image:url('../images/gallery-1.jpg')">
   <div class="hero-content">
-    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Dla profesjonalnych fotografów</div>
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Dla zawodowych fotografów</div>
     <h1 data-i18n="hero_title">Każde zdjęcie,<br>zamknięte w szkle.</h1>
-    <p class="hero-sub" data-i18n="hero_sub">EYE C U tworzy ręcznie wykonaną biżuterię z kaboszonem szklanym z dowolnego zdjęcia — premium pamiątkę gotową do sprzedaży dla klientów profesjonalnych fotografów.</p>
+    <p class="hero-sub" data-i18n="hero_sub">EYE C U tworzy ręcznie wykonaną biżuterię z kaboszonem szklanym z dowolnego zdjęcia — premium pamiątkę gotową do sprzedaży dla klientów zawodowych fotografów.</p>
     <div class="hero-ctas">
       <a href="#" class="btn btn-solid" data-i18n="hero_cta1">Poproś o dostęp klienta</a>
       <a href="#process" class="btn btn-ghost" data-i18n="hero_cta2">Zobacz, jak to działa</a>
@@ -300,18 +298,18 @@
   <div class="craft-row reveal">
     <div class="craft-item">
       <div class="num">01</div>
-      <h3 data-i18n="craft_f1_title">Dowolny temat</h3>
-      <p data-i18n="craft_f1_body">Portrety, zwierzęta, krajobrazy, USG, śluby — każde zdjęcie może zostać zamknięte w szkle.</p>
+      <h3 data-i18n="craft_f1_title">Dowolna tematyka</h3>
+      <p data-i18n="craft_f1_body">Portrety, zwierzęta, krajobrazy, śluby — każde zdjęcie może zostać zamknięte w szkle.</p>
     </div>
     <div class="craft-item">
       <div class="num">02</div>
       <h3 data-i18n="craft_f2_title">Szkło formowane ręcznie</h3>
-      <p data-i18n="craft_f2_body">Każdy kaboszon jest wypukły i wykończony ręcznie w naszym atelier w Poznaniu.</p>
+      <p data-i18n="craft_f2_body">Każdy kaboszon jest wykończony ręcznie w naszym atelier w Poznaniu.</p>
     </div>
     <div class="craft-item">
       <div class="num">03</div>
       <h3 data-i18n="craft_f3_title">Gotowe do sprzedaży</h3>
-      <p data-i18n="craft_f3_body">Dostarczane wykończone, zapakowane i wycenione dla Twojego punktu sprzedaży.</p>
+      <p data-i18n="craft_f3_body">Dostarczane wykończone, starannie zapakowane i gotowe do sprzedaży.</p>
     </div>
   </div>
 </section>
@@ -381,8 +379,8 @@
         <p data-i18n="why_c3_body">Każda sztuka powstaje na zamówienie z indywidualnego zdjęcia klienta.</p>
       </div>
       <div class="why-card">
-        <h3 data-i18n="why_c4_title">Opcja marki własnej (white-label)</h3>
-        <p data-i18n="why_c4_body">Prezentuj produkt pod nazwą swojego studia, a EYE C U pracuje w tle.</p>
+        <h3 data-i18n="why_c4_title">Sprawdzone doświadczenie</h3>
+        <p data-i18n="why_c4_body">Od lat współpracujemy z klientami z całej Unii Europejskiej, zapewniając najwyższą jakość wykonania i profesjonalną obsługę.</p>
       </div>
     </div>
   </div>
