@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EYE C U® — Program Partnerski dla Fotografów</title>
+<meta name="description" content="Dodaj fotografię tęczówki do swoich usług. Ekskluzywny program partnerski dla niezależnych fotografów — szkolenie, zestaw demo, pełna produkcja po naszej stronie.">
+<link rel="canonical" href="https://pro.eye-c-u.eu/pl/partnerzy/">
+<link rel="alternate" hreflang="fr" href="https://pro.eye-c-u.eu/fr/partenaires/">
+<link rel="alternate" hreflang="en" href="https://pro.eye-c-u.eu/en/partners/">
+<link rel="alternate" hreflang="pl" href="https://pro.eye-c-u.eu/pl/partnerzy/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0e0e;--paper:#ffffff;--bordeaux:#6B1E2E;--gold:#A9805A;--grey:#767676;--line:rgba(0,0,0,0.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',-apple-system,sans-serif;font-weight:300;color:var(--ink);background:radial-gradient(1100px 480px at 15% -10%,rgba(169,128,90,.07),transparent 60%),radial-gradient(900px 420px at 100% 0%,rgba(107,30,46,.05),transparent 55%),#f4f1ec;min-height:100vh}
+a:focus-visible,button:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+nav{position:sticky;top:0;z-index:100;background:rgba(244,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0 6vw;display:flex;align-items:center;justify-content:space-between;height:60px}
+nav img{height:34px;width:auto}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:400;opacity:.7;transition:opacity .15s}
+.nav-links a:hover{opacity:1}.nav-links a.active{opacity:1;color:var(--bordeaux)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-portal{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:var(--bordeaux);color:#fff;padding:7px 14px;border-radius:5px;text-decoration:none;font-weight:500;transition:background .15s}
+.nav-portal:hover{background:#7a2436}
+.lang-pills{display:flex;gap:5px}
+.lang-pill{border:1px solid var(--line);border-radius:16px;padding:3px 11px;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;background:var(--paper);color:var(--grey);transition:background .15s,color .15s,border-color .15s;font-family:'Jost',sans-serif}
+.lang-pill.active{background:var(--bordeaux);color:#fff;border-color:var(--bordeaux)}
+.lang-pill:hover:not(.active){border-color:var(--bordeaux);color:var(--bordeaux)}
+.hero{padding:5.5rem 6vw 4rem;max-width:900px;animation:riseIn .9s ease both}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bordeaux);display:flex;align-items:center;gap:12px;margin-bottom:1.4rem;font-weight:400}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--bordeaux)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.12;color:var(--ink);margin-bottom:1.4rem;max-width:780px}
+.hero h1 em{color:var(--bordeaux);font-style:italic}
+.hero>p{font-size:1.05rem;line-height:1.75;max-width:52ch;color:#3a3530;margin-bottom:2.2rem}
+.cta-group{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{border:none;border-radius:6px;padding:14px 22px;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:transform .12s,box-shadow .12s;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.btn-primary{background:linear-gradient(180deg,#7a2436,var(--bordeaux));color:#fff;box-shadow:0 3px 10px rgba(107,30,46,.25)}
+.btn-primary:hover{box-shadow:0 5px 14px rgba(107,30,46,.32);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border:1px solid var(--bordeaux);color:var(--bordeaux)}
+.btn-ghost:hover{background:rgba(107,30,46,.04);transform:translateY(-1px)}
+.divider{width:48px;height:1px;background:var(--gold);margin:0 6vw 3.5rem}
+section{padding:3.5rem 6vw}
+.section-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.9rem;display:block}
+section h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem}
+section>p{font-size:.97rem;line-height:1.75;max-width:52ch;color:#3a3530;margin-bottom:2.4rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:2rem}
+.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:0 2px 10px rgba(14,14,14,.045);transition:box-shadow .15s,transform .15s}
+.step:hover{box-shadow:0 5px 18px rgba(107,30,46,.1);transform:translateY(-2px)}
+.step-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:2.8rem;color:var(--gold);opacity:.55;display:block;margin-bottom:.5rem;line-height:1}
+.step h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.2rem;color:var(--bordeaux);margin-bottom:.6rem}
+.step p{font-size:.88rem;line-height:1.65;color:#4a443e}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:2rem}
+.benefit{background:linear-gradient(180deg,#fff,#fdfbf9);border:1px solid var(--line);padding:20px 22px;border-left:3px solid var(--bordeaux);border-radius:2px 10px 10px 2px;box-shadow:0 2px 10px rgba(14,14,14,.04)}
+.benefit-icon{font-size:1.4rem;margin-bottom:.8rem;display:block}
+.benefit h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.1rem;color:var(--bordeaux);margin-bottom:.4rem}
+.benefit p{font-size:.87rem;line-height:1.6;color:#4a443e}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:2rem}
+.product{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 16px;text-align:center;box-shadow:0 2px 10px rgba(14,14,14,.035);transition:box-shadow .15s,transform .15s}
+.product:hover{box-shadow:0 4px 16px rgba(107,30,46,.1);transform:translateY(-2px)}
+.product-icon{font-size:2rem;display:block;margin-bottom:.7rem}
+.product span{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--bordeaux)}
+.exclusivity{background:linear-gradient(180deg,#7a2436,var(--bordeaux));color:#fff;border-radius:10px;padding:36px 40px;margin:3.5rem 6vw;box-shadow:0 4px 18px rgba(107,30,46,.3)}
+.exclusivity .section-label{color:rgba(169,128,90,.85)}
+.exclusivity h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.9rem;color:#fff}
+.exclusivity p{font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.82);max-width:56ch}
+.terms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:2rem}
+.term{background:#fdfaf0;border:1px solid rgba(169,128,90,.3);border-radius:10px;padding:18px 20px}
+.term .term-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#8a6a1e;font-weight:500;margin-bottom:.5rem;display:block}
+.term p{font-size:.88rem;line-height:1.55;color:#5a4327;font-weight:400}
+.photo-callout{background:#fff;border:1px solid var(--line);border-radius:12px;padding:36px 40px;margin:0 6vw 3.5rem;display:flex;align-items:center;justify-content:space-between;gap:32px;box-shadow:0 2px 14px rgba(14,14,14,.06);flex-wrap:wrap}
+.photo-callout-text .callout-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.7rem;display:block}
+.photo-callout-text h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);color:var(--ink);margin-bottom:.65rem}
+.photo-callout-text .callout-sub{font-size:.92rem;line-height:1.7;color:#3a3530;max-width:44ch}
+.photo-callout-cta{flex-shrink:0}
+.contact-section{padding:3.5rem 6vw 5rem;max-width:680px}
+.contact-section h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:1rem}
+.contact-section>p{font-size:.97rem;line-height:1.75;color:#3a3530;max-width:48ch;margin-bottom:2rem}
+.contact-btns{display:flex;flex-wrap:wrap;gap:14px}
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;letter-spacing:.06em}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:#fff;font-size:.9rem}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:820px){.hero{padding:3.5rem 6vw 3rem}.exclusivity{padding:28px 24px;margin:2.5rem 6vw}.steps,.benefits,.products,.terms-grid{grid-template-columns:1fr}.photo-callout{flex-direction:column;align-items:flex-start;padding:28px 24px;margin:0 4vw 3rem}}
+@media(max-width:560px){nav{padding:0 4vw}.hero{padding:2.8rem 4vw 2.5rem}section{padding:2.8rem 4vw}.divider{margin:0 4vw 2.8rem}.exclusivity{margin:2rem 4vw;padding:24px 20px}.contact-section{padding:2.8rem 4vw 4rem}footer{padding:22px 4vw;flex-direction:column;gap:8px;text-align:center}.cta-group,.contact-btns{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/pl/"><img src="/images/logo-v2.png" alt="EYE C U Iris Photo"></a>
+  <div class="nav-links">
+    <a href="/pl/#craft">Rzemiosło</a>
+    <a href="/pl/#process">Jak to działa</a>
+    <a href="/pl/#gallery">Galeria</a>
+    <a href="/pl/#why">Dlaczego my</a>
+    <a href="/pl/partnerzy/" class="active">Partnerzy</a>
+    <a href="/pl/#contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <a href="/pl/pro-portal/" class="nav-portal">Panel klienta</a>
+    <div class="lang-pills">
+      <a href="/fr/partenaires/" class="lang-pill">FR</a>
+      <a href="/en/partners/" class="lang-pill">EN</a>
+      <a href="/pl/partnerzy/" class="lang-pill active">PL</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">Program Partnerski — Fotografowie</p>
+  <h1>Dodaj fotografię tęczówki<br><em>do swoich usług.</em></h1>
+  <p>Ty fotografujesz. My retuszujemy i produkujemy. Twoi klienci odchodzą z czymś, czego nie zapomną.</p>
+  <div class="cta-group">
+    <a class="btn btn-primary" href="https://wa.me/48509151841" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn btn-ghost" href="mailto:b2b@eyecu-irisphoto.com">Wyślij email</a>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<section class="reveal">
+  <span class="section-label">Jak to działa</span>
+  <h2>Proste dla Ciebie, niezapomniane dla Twoich klientów.</h2>
+  <p>Cztery kroki, mniej niż pięć minut z Twojej strony.</p>
+  <div class="steps">
+    <div class="step"><span class="step-num">01</span><h3>Fotografujesz tęczówkę</h3><p>Podczas lub po zwykłej sesji — mniej niż 5 minut ze sprzętem rekomendowanym przez EYE C U®.</p></div>
+    <div class="step"><span class="step-num">02</span><h3>Przesyłasz zdjęcie</h3><p>Wystarczy jedno zamówienie emailem: produkt, rozmiar, ilość, adres dostawy.</p></div>
+    <div class="step"><span class="step-num">03</span><h3>My retuszujemy i produkujemy</h3><p>Biżuteria, wall-art lub digital — EYE C U® zajmuje się całą postprodukcją z Poznania.</p></div>
+    <div class="step"><span class="step-num">04</span><h3>Twój klient otrzymuje produkt</h3><p>Dostawa bezpośrednio do klienta lub na Twój adres — według Twoich preferencji.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="section-label">Co otrzymujesz</span>
+  <h2>Usługa premium, zero zapasów.</h2>
+  <div class="benefits">
+    <div class="benefit"><span class="benefit-icon">🎓</span><h3>Specjalistyczne szkolenie</h3><p>EYE C U® szkoli Cię z makrofotografii tęczówki, aby zagwarantować profesjonalne rezultaty.</p></div>
+    <div class="benefit"><span class="benefit-icon">📦</span><h3>Zestaw demonstracyjny</h3><p>Gotowe produkty do prezentacji oferty klientom z realnym efektem.</p></div>
+    <div class="benefit"><span class="benefit-icon">✂️</span><h3>Retusz i produkcja w cenie</h3><p>Całą postprodukcję bierzemy na siebie — Ty skupiasz się na fotografii.</p></div>
+    <div class="benefit"><span class="benefit-icon">🏷️</span><h3>Preferencyjne ceny partnerskie</h3><p>Znaczna zniżka na wszystkie produkty EYE C U®. Żadnych dodatkowych opłat licencyjnych.</p></div>
+    <div class="benefit"><span class="benefit-icon">🚚</span><h3>Dostawa bezpośrednio do klienta</h3><p>Produkty mogą być wysyłane bezpośrednio do Twoich klientów końcowych, w całej Polsce.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="section-label">Nasze produkty</span>
+  <h2>Trzy formaty, jedno spojrzenie.</h2>
+  <p>Każdy produkt tworzony jest ze zdjęcia tęczówki wykonanego podczas Twojej sesji.</p>
+  <div class="products">
+    <div class="product"><span class="product-icon">💎</span><span>Biżuteria irysowa</span></div>
+    <div class="product"><span class="product-icon">🖼️</span><span>Wall-art</span></div>
+    <div class="product"><span class="product-icon">🖥️</span><span>Digital po retuszu</span></div>
+  </div>
+</section>
+
+<div class="exclusivity reveal">
+  <span class="section-label">Wyróżnienie</span>
+  <h2>Oferuj to, czego fotograf obok nie oferuje.</h2>
+  <p>Fotografia tęczówki to rzadka usługa. Dołączając do programu, dodajesz do swojej oferty coś, czego żadne oprogramowanie do retuszu nie jest w stanie zastąpić — wyjątkowy, ręcznie wykonany produkt zakorzeniony w prawdziwej emocji.</p>
+</div>
+
+<section class="reveal">
+  <span class="section-label">Warunki partnerstwa</span>
+  <h2>Jasna umowa, podpisana przez obie strony.</h2>
+  <p>Współpracę reguluje formalna umowa. Poniżej kluczowe punkty.</p>
+  <div class="terms-grid">
+    <div class="term"><span class="term-label">Opłata wstępna</span><p>Jednorazowa opłata przy podpisaniu umowy (zestaw, szkolenie, dostęp do marki). Brak miesięcznych opłat.</p></div>
+    <div class="term"><span class="term-label">Rabat partnerski</span><p>Preferencyjne stawki na wszystkie produkty EYE C U® przez cały czas trwania partnerstwa.</p></div>
+  </div>
+</section>
+
+<div class="contact-section reveal">
+  <span class="section-label">Chcesz wiedzieć więcej?</span>
+  <h2>Porozmawiajmy.</h2>
+  <p>Masz pytanie lub chcesz dowiedzieć się więcej o programie? Skontaktuj się bezpośrednio — odpowiadamy w ciągu 24 godzin.</p>
+  <div class="contact-btns">
+    <a class="btn btn-primary" href="https://wa.me/48509151841" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn btn-ghost" href="mailto:b2b@eyecu-irisphoto.com">Wyślij email</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">EYE&nbsp;C&nbsp;U®</span>
+  <span>© 2026 EYE C U sp. z o.o. — Poznań, Polska</span>
+  <a href="mailto:b2b@eyecu-irisphoto.com">b2b@eyecu-irisphoto.com</a>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+});
+</script>
+</body>
+</html>
