@@ -124,6 +124,23 @@
   .why-card h3{color:#fff;font-size:1.15rem;font-weight:400;margin-bottom:0.6rem;}
   .why-card p{color:rgba(255,255,255,0.6);line-height:1.7;font-size:0.95rem;}
 
+  /* ── IRIS PARTNERSHIP SECTION ── */
+  .iris-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;max-width:960px;}
+  @media(max-width:820px){.iris-grid{grid-template-columns:1fr;gap:3rem;}}
+  .iris-eyebrow{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;}
+  .iris-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);}
+  .iris-steps{border:1px solid rgba(255,255,255,0.12);border-radius:2px;overflow:hidden;}
+  .iris-steps-head{padding:1.6rem 2rem;background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.08);}
+  .iris-steps-head span{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.05rem;color:#fff;}
+  .iris-steps-body{padding:1.6rem 2rem;display:flex;flex-direction:column;gap:1.4rem;}
+  .iris-step{display:flex;align-items:flex-start;gap:1.2rem;}
+  .iris-step-num{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.2rem;flex:none;min-width:24px;}
+  .iris-step-title{color:#fff;font-size:0.95rem;margin-bottom:0.3rem;}
+  .iris-step-body{color:rgba(255,255,255,0.55);font-size:0.88rem;line-height:1.6;}
+  .iris-ctas{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn-gold{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .btn-ghost-white{border-color:rgba(255,255,255,0.35);color:#fff;background:transparent;}
+
   .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:start;}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:3rem;}}
   .contact-ctas{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;}
@@ -135,6 +152,34 @@
 
   footer{padding:3rem 6vw;text-align:center;color:var(--grey);font-size:0.8rem;border-top:1px solid var(--line);}
   a:focus-visible,button:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;}
+
+  /* ── IRIS POPUP ── */
+  #iris-popup{
+    position:fixed;bottom:2rem;right:2rem;z-index:300;
+    width:min(360px,calc(100vw - 2.4rem));
+    background:var(--paper);color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:2px;
+    box-shadow:0 12px 40px rgba(14,14,14,0.25);
+    opacity:0;transform:translateY(16px);
+    transition:opacity .5s ease,transform .5s ease;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  #iris-popup.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .popup-bar{height:3px;background:linear-gradient(90deg,var(--bordeaux),var(--gold));}
+  .popup-inner{padding:1.6rem 1.6rem 1.2rem;}
+  .popup-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
+  .popup-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:0.4rem;}
+  .popup-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.35rem;line-height:1.2;margin:0;}
+  .popup-close{background:none;border:none;cursor:pointer;color:var(--grey);font-size:1.1rem;padding:2px 4px;line-height:1;flex:none;margin-left:0.8rem;transition:color .2s ease;}
+  .popup-close:hover{color:var(--bordeaux);}
+  .popup-body{font-size:0.9rem;line-height:1.65;color:#2b2b2b;margin-bottom:1rem;}
+  .popup-sub{font-size:0.88rem;line-height:1.6;color:var(--grey);margin-bottom:1.4rem;}
+  .popup-cta{display:block;text-align:center;background:var(--bordeaux);color:#fff;font-family:'Jost',sans-serif;font-weight:500;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.8rem 1.2rem;text-decoration:none;transition:opacity .2s ease;margin-bottom:0.6rem;}
+  .popup-cta:hover{opacity:0.85;}
+  .popup-dismiss{display:block;width:100%;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:0.75rem;color:var(--grey);letter-spacing:0.04em;padding:0.5rem;transition:color .2s ease;text-align:center;}
+  .popup-dismiss:hover{color:var(--ink);}
 </style>
 </head>
 <body>
@@ -147,6 +192,7 @@
       <a href="#process" onclick="closeMenu()">Process</a>
       <a href="#gallery" onclick="closeMenu()">Gallery</a>
       <a href="#why" onclick="closeMenu()">Why Us</a>
+      <a href="#iris" onclick="closeMenu()">Iris Partnership</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
       <a href="/en/pro-portal/" class="btn btn-solid" onclick="closeMenu()">Client Portal</a>
       <div class="lang-switch open" id="langSwitchMobile"><a href="/en/" style="color:var(--bordeaux);font-weight:600;">EN</a><span>·</span><a href="/fr/">FR</a><span>·</span><a href="/pl/">PL</a></div>
@@ -226,6 +272,67 @@
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════
+     BRIDGE — connects jewellery craft to iris partnership
+     ════════════════════════════════════════════ -->
+<div style="padding:4rem 6vw;text-align:center;background:var(--paper);border-top:1px solid var(--line);">
+  <p class="reveal" style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.7;color:var(--ink);max-width:68ch;margin:0 auto;">
+    EYE C U was built on a simple idea: that a photograph can become a piece of jewellery worth keeping for life. We started with iris photography — the most intimate and unrepeatable image a lens can capture — and it remains the heart of what we make. If you're a photographer who doesn't yet offer iris sessions, that's exactly what our partnership is about.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     IRIS PHOTOGRAPHY PARTNERSHIP SECTION
+     ════════════════════════════════════════════ -->
+<section id="iris" style="background:var(--ink);">
+  <div class="iris-grid reveal">
+    <div>
+      <div class="iris-eyebrow">Expand your services</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1.15;color:#fff;margin-bottom:1.4rem;">
+        Add iris photography<br>to what you already do.
+      </h2>
+      <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:1.02rem;max-width:52ch;margin-bottom:1rem;">
+        Photographing your clients' irises takes under five minutes. We handle everything after: professional retouching, product preparation, production, and delivery.
+      </p>
+      <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:1.02rem;max-width:52ch;margin-bottom:0;">
+        Our network is growing. If you'd like to see how the partnership works and how naturally it fits into your existing sessions, we'd welcome a brief 15-minute conversation.
+      </p>
+      <div class="iris-ctas">
+        <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="btn btn-gold">Request a 15-min call</a>
+        <a href="#contact" class="btn btn-ghost-white">Learn more</a>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.2s;">
+      <div class="iris-steps">
+        <div class="iris-steps-head"><span>How it works for you</span></div>
+        <div class="iris-steps-body">
+          <div class="iris-step">
+            <span class="iris-step-num">01</span>
+            <div>
+              <div class="iris-step-title">5 minutes per client</div>
+              <div class="iris-step-body">A macro shot of the iris — no special studio setup required.</div>
+            </div>
+          </div>
+          <div class="iris-step">
+            <span class="iris-step-num">02</span>
+            <div>
+              <div class="iris-step-title">We take it from there</div>
+              <div class="iris-step-body">Retouching, jewellery production, packaging, and shipping — all handled by us.</div>
+            </div>
+          </div>
+          <div class="iris-step">
+            <span class="iris-step-num">03</span>
+            <div>
+              <div class="iris-step-title">A premium add-on, no overhead</div>
+              <div class="iris-step-body">New revenue from sessions you already run, with nothing to stock or produce yourself.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-head reveal">
     <div class="eyebrow">Get Started</div>
@@ -263,6 +370,26 @@
   </span>
 </div>
 
+<!-- ════════════════════════════════════════════
+     IRIS PARTNERSHIP POPUP
+     ════════════════════════════════════════════ -->
+<div id="iris-popup" role="dialog" aria-label="Iris photography partnership" aria-modal="false">
+  <div class="popup-bar"></div>
+  <div class="popup-inner">
+    <div class="popup-header">
+      <div>
+        <div class="popup-label">For photographers</div>
+        <h3 class="popup-title">Add iris photography<br>to your sessions.</h3>
+      </div>
+      <button class="popup-close" id="iris-popup-close" aria-label="Close">✕</button>
+    </div>
+    <p class="popup-body">Under five minutes per client. We handle retouching, production, and delivery — you offer a premium service with no overhead.</p>
+    <p class="popup-sub">Our network is growing. Join us with a brief 15-minute call.</p>
+    <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="popup-cta">Request a 15-min call</a>
+    <button class="popup-dismiss" id="iris-popup-dismiss">Don't show this again</button>
+  </div>
+</div>
+
 <script>
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
@@ -275,6 +402,24 @@
   document.getElementById('cookieAccept').addEventListener('click',()=>{const d=new Date();d.setFullYear(d.getFullYear()+1);document.cookie='eyecu_cookie_ack=1; expires='+d.toUTCString()+'; path=/';cookieBar.style.display='none';});
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ── Iris popup logic ──
+  (function(){
+    var COOKIE='eyecu_iris_popup';
+    var popup=document.getElementById('iris-popup');
+    if(getCookie(COOKIE))return;
+    function dismissForever(){
+      var d=new Date();d.setFullYear(d.getFullYear()+1);
+      document.cookie=COOKIE+'=1; expires='+d.toUTCString()+'; path=/';
+    }
+    function hide(permanent){
+      popup.classList.remove('visible');
+      if(permanent)dismissForever();
+    }
+    setTimeout(function(){popup.classList.add('visible');},8000);
+    document.getElementById('iris-popup-close').addEventListener('click',function(){hide(false);});
+    document.getElementById('iris-popup-dismiss').addEventListener('click',function(){hide(true);});
+  })();
 </script>
 </body>
 </html>
