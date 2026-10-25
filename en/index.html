@@ -180,6 +180,21 @@
   .popup-cta:hover{opacity:0.85;}
   .popup-dismiss{display:block;width:100%;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:0.75rem;color:var(--grey);letter-spacing:0.04em;padding:0.5rem;transition:color .2s ease;text-align:center;}
   .popup-dismiss:hover{color:var(--ink);}
+
+  /* ── Lead form (iris pop-up) ── */
+  #lead-form{margin-bottom:0.6rem;}
+  .lead-field{margin-bottom:0.7rem;text-align:left;}
+  .lead-field label{display:block;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey);margin-bottom:4px;}
+  .lead-field input{width:100%;padding:0.6rem 0.7rem;border:1px solid var(--line);font-size:0.9rem;background:#fdfcfb;font-family:'Jost',sans-serif;color:var(--ink);}
+  .lead-field input:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(169,128,90,.14);}
+  .lead-consent{display:flex;gap:0.5rem;align-items:flex-start;font-size:0.72rem;color:var(--grey);line-height:1.45;margin:0.1rem 0 0.9rem;text-align:left;cursor:pointer;}
+  .lead-consent input{margin-top:2px;accent-color:var(--bordeaux);flex:none;}
+  .lead-consent a{color:var(--bordeaux);text-decoration:underline;}
+  .lead-error{font-size:0.75rem;color:#b3261e;margin-bottom:0.6rem;text-align:left;}
+  .popup-oracle{text-align:center;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);margin:0.5rem 0;}
+  .popup-ghost{display:block;text-align:center;border:1px solid var(--ink);color:var(--ink);background:var(--paper);font-family:'Jost',sans-serif;font-weight:500;font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.7rem;text-decoration:none;}
+  .popup-ghost:hover{opacity:0.85;}
+  .lead-check{width:40px;height:40px;border-radius:50%;background:var(--bordeaux);color:#fff;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;}
 </style>
 </head>
 <body>
@@ -298,8 +313,8 @@
         Our network is growing. If you'd like to see how the partnership works and how naturally it fits into your existing sessions, we'd welcome a brief 15-minute conversation.
       </p>
       <div class="iris-ctas">
-        <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="btn btn-gold">Request a 15-min call</a>
-        <a href="#contact" class="btn btn-ghost-white">Learn more</a>
+        <button type="button" class="btn btn-gold" id="lead-open">Receive more info</button>
+        <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="btn btn-ghost-white">Request a 15-min call</a>
       </div>
     </div>
     <div class="reveal" style="transition-delay:.2s;">
@@ -383,9 +398,33 @@
       </div>
       <button class="popup-close" id="iris-popup-close" aria-label="Close">✕</button>
     </div>
-    <p class="popup-body">Under five minutes per client. We handle retouching, production, and delivery — you offer a premium service with no overhead.</p>
-    <p class="popup-sub">Our network is growing. Join us with a brief 15-minute call.</p>
-    <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="popup-cta">Request a 15-min call</a>
+    <div id="lead-form-wrap">
+      <p class="popup-body">Get the full partnership details — fee, revenue share and what's included — sent to your inbox.</p>
+      <form id="lead-form" novalidate>
+        <div class="lead-field">
+          <label for="lead-email">Email</label>
+          <input type="email" id="lead-email" name="email" required autocomplete="email" placeholder="you@studio.com">
+        </div>
+        <div class="lead-field">
+          <label for="lead-phone">Phone</label>
+          <input type="tel" id="lead-phone" name="phone" required autocomplete="tel" placeholder="+48 600 000 000">
+        </div>
+        <div class="lead-field">
+          <label for="lead-first">First name — optional</label>
+          <input type="text" id="lead-first" name="firstName" autocomplete="given-name" placeholder="Federico">
+        </div>
+        <label class="lead-consent"><input type="checkbox" id="lead-consent" required><span>I agree to receive partnership information from EYE C U by email. <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a></span></label>
+        <input type="text" id="lead-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+        <div class="lead-error" id="lead-error" hidden data-bad="Please enter a valid email address." data-phone="Please enter a phone number." data-consent="Please tick the box to receive the information."></div>
+        <button type="submit" class="popup-cta" id="lead-submit" data-sending="Sending…">Receive more info</button>
+      </form>
+      <div class="popup-oracle">or</div>
+      <a href="mailto:b2b@eyecu-irisphoto.com?subject=Iris%20photography%20partnership" class="popup-ghost">Request a 15-min call</a>
+    </div>
+    <div id="lead-done" hidden>
+      <div class="lead-check">✓</div>
+      <p class="popup-body"><strong>Almost there.</strong> We've sent a confirmation link to your email — click it and the full details are on their way.</p>
+    </div>
     <button class="popup-dismiss" id="iris-popup-dismiss">Don't show this again</button>
   </div>
 </div>
@@ -403,22 +442,40 @@
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // ── Iris popup logic ──
+  // ── Iris pop-up + lead capture ──
   (function(){
+    var ENDPOINT='';     // ← paste the Apps Script /exec URL here
+    var LANG='en';       // en | fr | pl
     var COOKIE='eyecu_iris_popup';
     var popup=document.getElementById('iris-popup');
-    if(getCookie(COOKIE))return;
-    function dismissForever(){
-      var d=new Date();d.setFullYear(d.getFullYear()+1);
-      document.cookie=COOKIE+'=1; expires='+d.toUTCString()+'; path=/';
-    }
-    function hide(permanent){
-      popup.classList.remove('visible');
-      if(permanent)dismissForever();
-    }
-    setTimeout(function(){popup.classList.add('visible');},8000);
-    document.getElementById('iris-popup-close').addEventListener('click',function(){hide(false);});
-    document.getElementById('iris-popup-dismiss').addEventListener('click',function(){hide(true);});
+    var form=document.getElementById('lead-form');
+    var openBtn=document.getElementById('lead-open');
+    function dismissForever(){var d=new Date();d.setFullYear(d.getFullYear()+1);document.cookie=COOKIE+'=1; expires='+d.toUTCString()+'; path=/';}
+    function show(){if(popup)popup.classList.add('visible');}
+    function hide(permanent){if(popup)popup.classList.remove('visible');if(permanent)dismissForever();}
+    if(!ENDPOINT){if(form)form.style.display='none';var orc=document.querySelector('#iris-popup .popup-oracle');if(orc)orc.style.display='none';if(openBtn)openBtn.style.display='none';}
+    if(popup&&!getCookie(COOKIE))setTimeout(show,8000);
+    var closeBtn=document.getElementById('iris-popup-close');
+    var dismissBtn=document.getElementById('iris-popup-dismiss');
+    if(closeBtn)closeBtn.addEventListener('click',function(){hide(false);});
+    if(dismissBtn)dismissBtn.addEventListener('click',function(){hide(true);});
+    if(openBtn)openBtn.addEventListener('click',function(){show();var e=document.getElementById('lead-email');if(e)e.focus();});
+    if(form&&ENDPOINT){form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var email=document.getElementById('lead-email');
+      var phone=document.getElementById('lead-phone');
+      var consent=document.getElementById('lead-consent');
+      var err=document.getElementById('lead-error');
+      var submit=document.getElementById('lead-submit');
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((email.value||'').trim())){err.hidden=false;err.textContent=err.getAttribute('data-bad');email.focus();return;}
+      if((phone.value||'').replace(/[^\d]/g,'').length<6){err.hidden=false;err.textContent=err.getAttribute('data-phone');phone.focus();return;}
+      if(!consent.checked){err.hidden=false;err.textContent=err.getAttribute('data-consent');return;}
+      err.hidden=true;submit.disabled=true;submit.textContent=submit.getAttribute('data-sending');
+      fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({
+        email:(email.value||'').trim(),phone:(phone.value||'').trim(),firstName:(document.getElementById('lead-first').value||'').trim(),consent:!!consent.checked,lang:LANG,company:(document.getElementById('lead-company').value||'')
+      })}).then(finish).catch(finish);
+    });}
+    function finish(){var w=document.getElementById('lead-form-wrap');var d=document.getElementById('lead-done');if(w)w.hidden=true;if(d)d.hidden=false;}
   })();
 </script>
 </body>
